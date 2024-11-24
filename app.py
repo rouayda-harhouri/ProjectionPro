@@ -13,6 +13,13 @@ users = [
         "lastname": "Application",
         "email": "admin@projection.pro"
     },
+        {
+        "username": "narjes-khalifa",
+        "password": "rouayda",
+        "firstname": "Narjes",
+        "lastname": "Application",
+        "email": "narjes@projection.pro"
+    },
     {
         "username": "rouayda-harhouri",
         "password": "test",
