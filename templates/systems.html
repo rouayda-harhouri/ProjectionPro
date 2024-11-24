@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block internalContent %}
+<div class="container mt-4">
+    <div style="text-align: center; padding-bottom: 15px;">
+        <h2>Systèmes de Projection</h2>
+    </div>
+
+  <!-- Mercator Projection -->
+  <div class="card mb-4 p-card">
+    <div class="row no-gutters">
+      <div class="col-md-4 card-img-container">
+        <img 
+            src="{{ url_for('static', filename='mercator_projection.jpg') }}" 
+            class="card-img" 
+            alt="Projection Mercator"
+        >
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Projection Mercator</h5>
+          <p class="card-text">
+            La projection Mercator, créée par Gerardus Mercator en 1569, est l'une des projections cartographiques les plus célèbres.
+          </p>
+          <p class="card-text">
+            <strong>Spécificités :</strong> Conçue pour les navigateurs, elle conserve les angles et la forme des continents, mais au prix de distorsions importantes des 
+            tailles des zones, surtout près des pôles. Cette projection est utilisée principalement pour les cartes maritimes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Robinson Projection -->
+  <div class="card mb-4 p-card">
+    <div class="row no-gutters">
+      <div class="col-md-4 card-img-container">
+        <img src="{{ url_for('static', filename='robinson_projection.jpg') }}" 
+             class="card-img" 
+             alt="Projection Robinson">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Projection Robinson</h5>
+          <p class="card-text">
+            Créée par Arthur H. Robinson en 1963, cette projection est conçue pour représenter la Terre d'une manière visuellement attrayante. 
+            
+          </p>
+          <p class="card-text">
+            <strong>Spécificités :</strong> Bien qu'elle ne conserve pas complètement la taille, la forme ou la direction, elle minimise les distorsions sur l'ensemble de la carte.
+            C'est une projection souvent utilisée pour les cartes murales dans les écoles et les bureaux.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lambert Conformal Conic Projection -->
+  <div class="card mb-4 p-card">
+    <div class="row no-gutters">
+        <div class="col-md-4 card-img-container">
+            <img src="{{ url_for('static', filename='lambert_projection.jpg') }}" 
+                class="card-img" 
+                alt="Projection Lambert">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Projection Lambert Conforme Conique</h5>
+            <p class="card-text">
+                Développée par Johann Heinrich Lambert en 1772, cette projection est particulièrement adaptée pour les régions ayant une 
+                orientation est-ouest, comme les États-Unis ou l'Europe.
+            </p>
+            <p class="card-text">
+                <strong>Spécificités :</strong> Elle conserve les angles, ce qui la rend utile pour les cartes 
+                aéronautiques et topographiques.
+              </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Projection gnomonique -->
+<div class="card mb-4 p-card">
+    <div class="row no-gutters">
+      <div class="col-md-4 card-img-container">
+        <img src="{{ url_for('static', filename='gnomonic_projection.jpg') }}" 
+             class="card-img" 
+             alt="Projection gnomonique"
+             style="height: auto; max-width: 350px;"
+             >
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Projection gnomonique</h5>
+          <p class="card-text">
+            Utilisée depuis l'Antiquité, cette projection projette les points de la surface terrestre depuis le centre de la Terre sur un plan tangent. 
+            Elle est idéale pour montrer les grands cercles comme des lignes droites, ce qui est très utile pour la navigation.
+          </p>
+          <p class="card-text">
+            <strong>Spécificités :</strong> Les grands cercles apparaissent comme des lignes droites, mais les distances et les angles sont déformés. 
+            Elle est souvent utilisée en aviation et en navigation maritime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projection azimutale équidistante -->
+<div class="card mb-4 p-card">
+    <div class="row no-gutters">
+      <div class="col-md-4 card-img-container">
+        <img src="{{ url_for('static', filename='azimuthal_equidistant_projection.jpg') }}" 
+             class="card-img" 
+             alt="Projection azimutale équidistante">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Projection azimutale équidistante</h5>
+          <p class="card-text">
+            Développée depuis l'Antiquité, la projection azimutale équidistante représente les distances correctement à partir d'un point central. 
+            Elle est souvent utilisée pour montrer les relations géographiques depuis un lieu spécifique, comme dans les plans de vol ou la cartographie des réseaux.
+          </p>
+          <p class="card-text">
+            <strong>Spécificités :</strong> Précise pour les distances radiales, cette projection est utilisée pour des applications comme les cartes des zones radio et les plans de navigation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

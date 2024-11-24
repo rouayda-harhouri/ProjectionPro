@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block internalContent %}
+<div class="container mt-4">
+    <div style="text-align: center; padding-bottom: 15px;">
+        <h2>Convertisseur de coordonnées</h2>
+    </div>
+    <div class="card mx-auto p-4 p-card">
+        <form id="conversion-form">
+            <div class="form-group">
+                <label for="from-system">Système Source <span class="required"></span>: </label>
+                <select id="from-system" class="form-control">
+                    <option value="mercator">Mercator Web</option>
+                    <option value="robinson">Projection Robinson</option>
+                    <option value="lambert">Projection Lambert Conforme Conique</option>
+                    <option value="gnomonic">Projection gnomonique</option>
+                    <option value="azimuthal">Projection azimutale équidistante</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="latitude">Latitude <span class="required"></span>: </label>
+                <input type="number" id="latitude" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="longitude">Longitude <span class="required"></span>: </label>
+                <input type="number" id="longitude" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="to-system">Système Destination <span class="required"></span>: </label>
+                <select id="to-system" class="form-control">
+                    <option value="mercator">Mercator Web</option>
+                    <option value="robinson">Projection Robinson</option>
+                    <option value="lambert">Projection Lambert Conforme Conique</option>
+                    <option value="gnomonic">Projection gnomonique</option>
+                    <option value="azimuthal">Projection azimutale équidistante</option>
+                </select>
+            </div>
+            <div class="form-group submit-btn-container">
+                <button type="submit" class="btn btn-primary conversion-button">Convertir</button>
+            </div>
+            <div class="form-group row" style="padding-top: 10px;">
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col-4"><strong>Résultat: </strong></div>
+                <div class="col-4"><strong>Latitude: </strong><span id="result-latitude"></span></div>
+                <div class="col-4"><strong>Longitude: </strong><span id="result-longitude"></span></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h3>Map Source: </h3>
+    <iframe id="from-map" class="card mx-auto p-card" style="width: 100%; height: 500px; border: none;"></iframe>
+
+    <h3 class="mt-5">Map Destination: </h3>
+    <iframe id="to-map" class="card mx-auto p-card"  style="width: 100%; height: 500px; border: none;"></iframe>
+</div>
+
+<script src="{{ url_for('static', filename='js/converter.js') }}"></script>
+
+{% endblock %}

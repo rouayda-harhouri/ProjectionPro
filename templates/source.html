@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block internalContent %}
+
+<div class="container my-5">
+
+    <div class="d-flex justify-content-end mt-4">
+        <a href="/static/code.zip" class="btn btn-primary me-2" role="button" target="_blank">
+          <i class="fas fa-download"></i> Télécharger
+        </a>
+      
+        <a href="https://github.com/user/repo" class="btn btn-dark" role="button" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+      
+
+    <div class="row">
+        <h3>Description du projet</h3>
+        <div class="card mx-auto p-4 p-card">
+            <p>
+                Ce projet est une application web qui permet de convertir des coordonnées géographiques entre différents systèmes
+                de projection (Mercator, Robinson, Lambert, etc.) et d'afficher les résultats sur des cartes interactives. Les 
+                utilisateurs peuvent sélectionner un système de projection d'entrée et un système de projection de sortie, et voir
+                les résultats visualisés sur deux cartes distinctes.
+            </p>
+            <p>
+                Les technologies mentionnées ci-dessus sont combinées pour fournir une expérience utilisateur fluide et interactive.
+                Bootstrap est utilisé pour un design élégant et responsive, et Leaflet permet d'intégrer des cartes interactives.
+            </p>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row">
+        <h3>Technologies Utilisées</h3>
+            <div class="card mx-auto p-4 p-card">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Python</strong> : Langage de programmation utilisé pour la logique backend.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Flask</strong> : Framework léger en Python pour le développement d'applications web.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>PyProj</strong> : Une bibliothèque Python puissante utilisée pour effectuer des transformations entre différents systèmes de coordonnées géographiques et projections. Elle garantit des conversions précises en utilisant des paramètres de projection conformes aux normes.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Folium</strong> : Une bibliothèque Python pour créer des cartes interactives. Elle génère des cartes HTML dynamiques en intégrant des outils comme Leaflet, permettant d'afficher facilement les points de conversion et les systèmes de projection.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Jinja</strong> : Moteur de templating intégré à Flask, pour générer dynamiquement le contenu HTML.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Gestion d'authentification</strong> : Utilisation de sessions Flask pour gérer l'état de connexion des utilisateurs.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>HTML & CSS</strong> : Pour structurer et styliser les pages web.
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Bootstrap</strong> : Framework CSS pour la mise en page responsive et le design esthétique des pages.
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row">
+        <h3>Schéma de la Structure du Projet</h3>
+        <div class="card mx-auto p-4 p-card">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Structure du projet
+                </div>
+                <div class="card-body">
+                    <p>Le projet est organisé comme suit :</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>app.py</strong> : Fichier principal contenant le code backend en Flask.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>requirements.txt</strong> : Liste des librairies python externes utilisées dans le projet.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>templates/</strong> : Dossier contenant les fichiers HTML (gérés avec Jinja).
+                        </li>
+                        <li class="list-group-item">
+                            <strong>static/</strong> : Dossier pour les fichiers statiques, tels que CSS, JavaScript et images.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

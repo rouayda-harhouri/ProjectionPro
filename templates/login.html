@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block externalContent %}
+<div class="row login-page-container">
+    <div class="col-8 globe-container starry-sky">
+        <img class="globe-img" src="{{url_for('static', filename='globe.gif')}}" />
+    </div>
+    <div class="col-4 p-30 right-part-container starry-sky-small">
+        <div class="container mt-5 m-t-100 login-form-container bg-light login-container">
+            <div class="text-center login-header-container">   
+                <h3><i class="fa-solid fa-map-location-dot"></i> ProjectionPro</h3>
+                <h6 style="color: rgb(104, 103, 103);">Entrez vos informations pour continuer...</h6>
+            </div>
+            <form method="POST" class="m-t-50">
+                <div>
+                    {% if error == True %}
+                    <p class="badge-danger" style="text-align: center;">
+                        Email ou mot de passe invalide, veuillez réessayer !
+                    </p>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Adresse e-mail <span class="required"></span></span> :</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe  <span class="required"></span> :</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary width-100 m-t-20 login-btn">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

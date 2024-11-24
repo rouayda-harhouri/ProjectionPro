@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectionPro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link id="favicon" rel='icon' type='image/png' href="{{ url_for('static', filename='earth-ball.ico') }}" />
+
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+
+</head>
+<body>
+    {% if session.get("user") %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="brand-container">
+                <a class="navbar-brand" href="#"><i class="fa-solid fa-map-location-dot"></i> ProjectionPro</a>
+            </div>
+            <div class="dropdown ms-auto nav-bar-body">
+                <a
+                    class="btn btn-secondary dropdown-toggle user-button"
+                    href="#"
+                    role="button"
+                    id="userMenu"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="width: 200px;"
+                    >
+                    <i class="fas fa-user" style="margin-right: 8px;"></i> {{ session['user']['firstname'] + ' ' + session['user']['lastname'] }}
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="userMenu"
+                    style="width: 200px;"
+                    >
+                    <li><a class="dropdown-item" href="{{ url_for('profile') }}"><i class="fas fa-user" style="margin-right: 8px;"></i>Mon Profil</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('about') }}"><i class="fas fa-info-circle" style="margin-right: 8px;"></i>À propos</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt" style="margin-right: 8px;"></i>Déconnexion</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="bg-light p-3 sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="{{ 'nav-link active' if current_path == '/systems' else 'nav-link' }}" href="{{ url_for('systems') }}"><i class="fas fa-bars" style="margin-right: 8px;"></i>Systèmes de projections</a></li>
+                <li class="nav-item"><a class="{{ 'nav-link active' if current_path == '/converter' else 'nav-link' }}" href="{{ url_for('converter') }}"><i class="fa-solid fa-code-compare" style="margin-right: 8px;"></i>Convertisseur</a></li>
+                <li class="nav-item"><a class="{{ 'nav-link active' if current_path == '/source' else 'nav-link' }}" href="{{ url_for('source') }}"><i class="fa-solid fa-code" style="margin-right: 8px;"></i>Code Source</a></li>
+                <li class="nav-item"><a class="{{ 'nav-link active' if current_path == '/profile' else 'nav-link' }}" href="{{ url_for('profile') }}"><i class="fas fa-user" style="margin-right: 8px;"></i>Mon Profil</a></li>
+                <li class="nav-item"><a class="{{ 'nav-link active' if current_path == '/about' else 'nav-link' }}" href="{{ url_for('about') }}"><i class="fas fa-info-circle" style="margin-right: 8px;"></i>À propos</a></li>
+            </ul>
+        </div>
+        <div class="internal-content-container">
+            <div class="flex-grow-1 p-4 internal-content-block-container">
+                {% block internalContent %}{% endblock %}
+            </div>
+            <footer class="bg-light text-center py-3 mt-auto">
+                <small>Copyrights &copy; 2024 - Réalisé par <b>Rouayda Harhouri</b></small>
+            </footer>
+        </div>
+    </div>
+    {% else %}
+        {% block externalContent %}{% endblock %}
+        <footer class="bg-light text-center py-3 mt-auto">
+            <small>Copyrights &copy; 2024 - Réalisé par <b>Rouayda Harhouri</b></small>
+        </footer>
+    {% endif %}
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+</html>

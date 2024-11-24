@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block internalContent %}
+<div class="container my-5">
+    <div class="card mx-auto" style="max-width: 600px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <div class="card-body text-center">
+        <!-- Profile Picture -->
+        <img src="{{ url_for('static', filename='profile_icon.png') }}" 
+             alt="Profile Picture" 
+             class="rounded-circle mb-4" 
+             style="width: 150px; height: 150px;">
+        
+        <!-- User Information -->
+        <h4 class="card-title">{{ user['firstname'] }} {{ user['lastname'] }}</h4>
+        <p class="card-text text-muted mb-4">@{{ user['username'] }}</p>
+        
+        <!-- Contact Information -->
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Email :</strong> {{ user['email'] }}
+          </li>
+          <li class="list-group-item">
+            <strong>Rôle :</strong> Administrateur
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
