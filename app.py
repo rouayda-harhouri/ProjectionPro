@@ -14,20 +14,13 @@ users = [
         "email": "admin@projection.pro"
     },
         {
-        "username": "narjes-khalifa",
+        "username": "rouayda-marwa",
         "password": "rouayda",
-        "firstname": "Narjes",
+        "firstname": "Rouayda & Marwa",
         "lastname": "Application",
-        "email": "narjes@projection.pro"
+        "email": "rouayda.marwa@projection.pro"
     },
-    {
-        "username": "rouayda-harhouri",
-        "password": "test",
-        "firstname": "Rouayda",
-        "lastname": "Harhouri",
-        "email": "rouayda.harhouri@projection.pro"
-    }
-]
+   
 
 # Define available projections
 projections = {
