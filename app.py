@@ -7,19 +7,13 @@ app.secret_key = "q4s57DSF42s45S555ssZ236"
 
 users = [
     {
-        "username": "admin-projection",
+        "username": "rouayda-marwa",
         "password": "admin",
         "firstname": "Admin",
         "lastname": "Application",
-        "email": "admin@projection.pro"
+        "email": "rouaydamarwaa@projection.pro"
     },
-        {
-        "username": "rouayda-marwa",
-        "password": "rouayda",
-        "firstname": "Rouayda & Marwa",
-        "lastname": "Application",
-        "email": "rouayda.marwa@projection.pro"
-    },
+        
    
 
 # Define available projections
